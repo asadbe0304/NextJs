@@ -89,12 +89,12 @@ const index = ({ window }: Props) => {
           sx={{
             display: { xs: "block", sm: "none" },
             "& .MuiDrawer-paper": {
-              boxSizing: "border-box", width: drawerWidth
+              boxSizing: "border-box", width: "100%"
             }
           }
           }
         >
-
+          
           {drawer}
         </Drawer>
       </Box>
