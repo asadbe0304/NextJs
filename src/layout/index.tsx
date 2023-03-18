@@ -1,6 +1,6 @@
 import React from 'react'
 import { LayoutProps } from './layout.props'
-const index = ({}: LayoutProps):JSX.Element => {
+const index = ({children}: LayoutProps):JSX.Element => {
   return (
     <div>
       Layout
