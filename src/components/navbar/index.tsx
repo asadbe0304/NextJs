@@ -14,10 +14,12 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { navItem } from '@/src/Config/constant';
+import CloseIcon from '@mui/icons-material/Close';
 interface Props {
   window?: () => Window
 }
 const drawerWidth = 300
+
 const index = ({ window }: Props) => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -29,9 +31,14 @@ const index = ({ window }: Props) => {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
-      </Typography>
+      <div className="flex items-center justify-between" style={{display:"flex", justifyContent:"space-between", alignItems:"center",padding:"0 20px"}}>
+        <Typography variant="h6" sx={{ my: 2 }}>
+          MUI
+        </Typography>
+        <div>
+          <CloseIcon />
+        </div>
+      </div>
       <Divider />
       <List>
         {navItem.map((item) => (
@@ -65,8 +72,6 @@ const index = ({ window }: Props) => {
             >
               MUI
             </Typography>
-            {/* {drawer} */}
-
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               {navItem.map((item) => (
                 <Button key={item.route} sx={{ color: '#fff' }}>
@@ -94,7 +99,7 @@ const index = ({ window }: Props) => {
           }
           }
         >
-          
+
           {drawer}
         </Drawer>
       </Box>
