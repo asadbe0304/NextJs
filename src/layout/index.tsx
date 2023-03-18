@@ -1,10 +1,16 @@
 import React from 'react'
+import { Navbar, Footer } from '../components'
 import { LayoutProps } from './layout.props'
-const index = ({children}: LayoutProps):JSX.Element => {
+import {Box} from "@mui/material"
+const index = ({ children }: LayoutProps): JSX.Element => {
   return (
-    <div>
-      Layout
-    </div>
+    <>
+      <Navbar />
+      <Box minHeight={'90vh'}>
+        {children}
+      </Box>
+      <Footer />
+    </>
   )
 }
 
